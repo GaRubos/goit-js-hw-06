@@ -41,13 +41,13 @@ imgElt.style.display = "block";
 
 let elem = document.querySelectorAll("ul");
 let elemcol = [...elem];
-for (let i = 0; i < elemcol.length; i++) {
+for (let i = 0; i < elemcol.length; i += 1) {
   elemcol[i].style.display = "flex";
   elemcol[i].type = "none";
 }
 
 const items = document.querySelectorAll("li");
-for (let i = 0; i < items.length; i++) {
+for (let i = 0; i < items.length; i += 1) {
   items[i].style.marginRight = "15px";
 }
 
