@@ -1,12 +1,10 @@
-const categoriesEl = document.querySelector("#categories");
+const menuItemsByClass = document.querySelectorAll(".item");
+console.log(`Number of categories: ${menuItemsByClass.length}.`); // ..
 
-const listEl = categoriesEl.querySelectorAll(".item");
-console.log(`Number of categories: ${listEl.length}`);
-
-function getElements(items) {
-  for (const item of items) {
-    console.log(`Category: ${item.firstElementChild.textContent}`);
-    console.log(`Elements: ${item.lastElementChild.children.length}`);
-  }
+for (let i = 0; i < menuItemsByClass.length; i += 1) {
+  const title = menuItemsByClass[i].firstElementChild;
+  const category = menuItemsByClass[i].lastElementChild;
+  const item = category.querySelectorAll("li");
+  console.log(`Category: ${title.textContent}`);
+  console.log(`Elements: ${item.length}`);
 }
-getElements(listEl);
