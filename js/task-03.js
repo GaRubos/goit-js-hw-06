@@ -13,42 +13,56 @@ const images = [
   },
 ];
 
-const makeGallerylist = (image) => {
-  const { url, alt } = image;
-  return `
-  <li>
-     <img src="${url}" alt="${alt}">
-    </li>
-  `;
-};
-const galleryListEl = document.querySelector(".gallery");
+// const makeGallerylist = (image) => {
+//   const { url, alt } = image;
+//   return `
+//   <li>
+//      <img src="${url}" alt="${alt}">
+//     </li>
+//   `;
+// };
+// const galleryListEl = document.querySelector(".gallery");
 
-const makeGallerylistRow = images.map(makeGallerylist).join("");
-galleryListEl.insertAdjacentHTML("beforeend", makeGallerylistRow);
+// const makeGallerylistRow = images.map(makeGallerylist).join("");
+// galleryListEl.insertAdjacentHTML("beforeend", makeGallerylistRow);
 
-let imgElf = document.querySelectorAll("img")[0];
-imgElf.style.width = "300px";
-imgElf.style.height = "200px";
-imgElf.style.display = "block";
-const imgElc = document.querySelectorAll("img")[1];
-imgElc.style.width = "300px";
-imgElc.style.height = "200px";
-imgElc.style.display = "block";
-const imgElt = document.querySelectorAll("img")[2];
-imgElt.style.width = "300px";
-imgElt.style.height = "200px";
-imgElt.style.display = "block";
+// let imgElf = document.querySelectorAll("img")[0];
+// imgElf.style.width = "300px";
+// imgElf.style.height = "200px";
+// imgElf.style.display = "block";
+// const imgElc = document.querySelectorAll("img")[1];
+// imgElc.style.width = "300px";
+// imgElc.style.height = "200px";
+// imgElc.style.display = "block";
+// const imgElt = document.querySelectorAll("img")[2];
+// imgElt.style.width = "300px";
+// imgElt.style.height = "200px";
+// imgElt.style.display = "block";
 
-let elem = document.querySelectorAll("ul");
-let elemcol = [...elem];
-for (let i = 0; i < elemcol.length; i += 1) {
-  elemcol[i].style.display = "flex";
-  elemcol[i].type = "none";
-}
+// let elem = document.querySelectorAll("ul");
+// let elemcol = [...elem];
+// for (let i = 0; i < elemcol.length; i += 1) {
+//   elemcol[i].style.display = "flex";
+//   elemcol[i].type = "none";
+// }
 
-const items = document.querySelectorAll("li");
-for (let i = 0; i < items.length; i += 1) {
-  items[i].style.marginRight = "15px";
-}
+// const items = document.querySelectorAll("li");
+// for (let i = 0; i < items.length; i += 1) {
+//   items[i].style.marginRight = "15px";
+// }
 
-console.log(makeGallerylistRow);
+// console.log(makeGallerylistRow);
+
+const listEl = document.querySelector(".gallery");
+const makeGallerylist = ({ url, alt }) =>
+  `<li>
+    <img src = "${url}"
+     alt = "${alt}" 
+     width = "630"
+     height = "375">
+     </li>`;
+const imagesEl = images.map(makeGallerylist).join("");
+
+listEl.insertAdjacentHTML("afterbegin", imagesEl);
+
+console.log(listEl);
